@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>CRUD APP</title>
+  </head>
+  <body>
+    <main>
+      <div class="wrapper">
+        <h2 style="text-align: center">Simple CRUD App</h2>
+
+        <div class="no-ifo" id="noIfo">
+          <p id="heading">Create or view your personal details.</p>
+          <p id="viewHeading" style="display: none">
+            View your personal details.
+          </p>
+        </div>
+        <!-- form to create user details -->
+        <form style="display: none" id="formDetails">
+          <h5 style="margin-bottom: 8px">Create Your Personal Info</h5>
+          <div class="form-group">
+            <input
+              type="text"
+              name="firstname"
+              id="firstname"
+              placeholder="First Name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <input
+              type="text"
+              name="lastname"
+              id="lastname"
+              placeholder="Last Name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <select name="gender" id="gender" required>
+              <option value="gender" selected disabled>Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <input
+              type="number"
+              name="age"
+              id="age"
+              placeholder="Age"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <input
+              type="text"
+              name="address"
+              id="address"
+              placeholder="Address"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              name="country"
+              id="country"
+              placeholder="Country"
+              required
+            />
+          </div>
+
+          <div>
+            <input class="btn" type="submit" value="Submit" />
+          </div>
+        </form>
+
+        <div class="home" id="refreshBtn" style="display: none">
+          <a href="index.html">Homepage</a>
+        </div>
+
+        <div>
+          <!-- form to view user details -->
+          <form style="display: none" id="viewDetails">
+            <h5>Provide your email</h5>
+            <div class="form-group">
+              <input
+                type="email"
+                name="viewEmail"
+                id="viewEmail"
+                placeholder="Email"
+                required
+              />
+            </div>
+
+            <div>
+              <input class="btn" type="submit" value="View Details" />
+            </div>
+          </form>
+
+          <div id="userDetailsWrap" style="display: none">
+            <div id="userDetails"></div>
+          </div>
+
+          <div style="margin-top: 6px">
+            <button
+              class="btn"
+              id="editBtn"
+              style="display: none"
+              onclick="updateHandler()"
+            >
+              Edit details
+            </button>
+            <button
+              class="btn"
+              id="deleteBtn"
+              style="display: none"
+              onclick="deleteHandler()"
+            >
+              Delete details
+            </button>
+          </div>
+
+          <!-- form to update user details -->
+          <form style="display: none" id="updateDetails">
+            <h5>Provide your email</h5>
+            <div class="form-group">
+              <input
+                type="email"
+                name="updateemail"
+                id="updateEmail"
+                placeholder="Email"
+                required
+              />
+            </div>
+
+            <div>
+              <input class="btn" type="submit" value="Submit" />
+            </div>
+          </form>
+
+          <form style="display: none" id="addressUpdate">
+            <p style="font-size: small; margin-bottom: 8px; font-weight: 600">
+              Note: You are only allowed to update your address.
+            </p>
+
+            <div class="form-group">
+              <input
+                type="text"
+                name="updateaddress"
+                id="updateAddress"
+                placeholder="Update your Address"
+                required
+              />
+            </div>
+
+            <div>
+              <input class="btn" type="submit" value="Update Details" />
+            </div>
+          </form>
+
+          <!-- form to delete user details -->
+          <form style="display: none" id="deleteDetails">
+            <h5>
+              What to delete your details? <br />
+              Provide your email
+            </h5>
+            <div class="form-group">
+              <input
+                type="email"
+                name="deleteemail"
+                id="deleteEmail"
+                placeholder="Email"
+                required
+              />
+            </div>
+
+            <div>
+              <input class="btn" type="submit" value="Delete Details" />
+            </div>
+          </form>
+
+          <div class="home" id="homepageBtn" style="display: none">
+            <a href="index.html">Homepage</a>
+          </div>
+        </div>
+
+        <div class="btn-wrapper">
+          <button
+            class="btn"
+            id="createBtn"
+            onclick="createHandler()"
+            style="margin-right: 4px"
+          >
+            Create
+          </button>
+          <button class="btn" id="readBtn" onclick="userDetails()">View</button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2025. Made By Solam.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
